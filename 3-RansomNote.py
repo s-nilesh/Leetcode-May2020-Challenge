@@ -18,25 +18,7 @@
 #SOLUTION-1
 from collections import Counter
 class Solution:
-    # def return_dict(self, string: str) -> dict:
-    #     str_d = {}
-    #     for letter in string:
-    #         if letter in str_d:
-    #             str_d[letter] += 1
-    #         else:
-    #             str_d[letter] = 1
-    #     return str_d
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        # flag = True
-        # rn_dict = self.return_dict(ransomNote)
-        # mag_dict = self.return_dict(magazine)
-        # for rn_letter in rn_dict.keys():
-        #     if ((rn_letter not in mag_dict.keys()) or (mag_dict[rn_letter] < rn_dict[rn_letter])):
-        #         flag = False
-        #         break
-        #     else:
-        #         flag = True
-
         return Counter(ransomNote) - Counter(magazine) == {}
 
 #SOLUTION-2
