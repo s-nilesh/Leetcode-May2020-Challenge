@@ -50,3 +50,17 @@ class Solution:
         return self.binaryToInt(self.intToBinCompString(num))
 
 
+#SOLUTION-2
+class Solution:
+    def findComplement(self, num: int) -> int:
+        binVal = f'{num:b}'
+        binComplement = ''.join(['0' if x=='1' else '1' for x in binVal])
+        return int(binComplement, 2)
+
+
+
+#SOLUTION-3 (best solution)
+class Solution:
+    def findComplement(self, num: int) -> int:
+        return ((1 << int(math.log(num,2)) + 1) - 1) ^ num
+#first we found number of bits required to represent num in binary. Then we created a binary representation of all 1 of the same number of bits. After that we preformed bitwise xor of given number with our generated number to get complement of the number. Efficient use of bitwise operators in python
