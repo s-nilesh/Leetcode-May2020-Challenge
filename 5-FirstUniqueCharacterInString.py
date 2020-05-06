@@ -14,7 +14,7 @@
 
 
 
-#SOLUTION
+#SOLUTION-1
 from collections import Counter
 class Solution:
     def firstUniqChar(self, s: str) -> int:
@@ -27,3 +27,14 @@ class Solution:
             else:
                 req_letter_index = -1
         return req_letter_index
+
+
+#SOLUTION-2
+from collections import Counter
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        letter_count = Counter(s)
+        if 1 in letter_count.values():
+            return s.index(list(letter_count.keys())[list(letter_count.values()).index(1)])
+        else:
+            return -1
